@@ -1,3 +1,30 @@
 .hidden {
   display: none;
 }
+
+.quote {
+  text-align: center;
+  font-style: italic;
+}
+
+.weather {
+  font-weight: 700;
+}
+
+#todo-list {
+  width: 80%;
+}
+
+.todo {
+  white-space: nowrap;
+  display: inline-block;
+  width: 80%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-bottom: solid;
+  height: 100%;
+}
+.todo-delete {
+  float: right;
+  height: 100%;
+}
