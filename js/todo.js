@@ -5,7 +5,6 @@ const toDoList = document.getElementById("todo-list");
 const TODOS_KEY = "todos";
 
 let toDos = [];
-
 function saveToDos() {
   localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
 }
@@ -21,8 +20,10 @@ function paintToDo(newTodo) {
   const li = document.createElement("li");
   li.id = newTodo.id;
   const span = document.createElement("span");
+  span.classList.add("todo");
   span.innerText = newTodo.text;
   const button = document.createElement("button");
+  button.classList.add("todo-delete");
   button.innerText = "❌";
   button.addEventListener("click", deleteToDo);
   li.appendChild(span);
@@ -36,7 +37,7 @@ function handleToDoSubmit(event) {
   toDoInput.value = "";
   const newTodoObj = {
     text: newTodo,
-    id: Date.now(),
+    id: Date.now()
   };
   toDos.push(newTodoObj);
   paintToDo(newTodoObj);
